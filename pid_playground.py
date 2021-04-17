@@ -34,11 +34,11 @@ def plotVerlet():
     return (t_scale, theta_result)
     
 if __name__ == "__main__":
-    kp = float(input("Kp:"))
-    ki = float(input("Ki: "))
-    kd = float(input("Kd: "))
+    kp = 10
+    ki = 0.005
+    kd = -1
     # PID-related
-    setpoint = 1
+    setpoint = 10
     lastError = 0.0
     integral = 0.0
     
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     om_new = om_old + k2v
     theta_new = theta_old + k2y
     t += dt
-    while t < 3:
+    while t < 5:
         theta_oldest = theta_old
         theta_old = theta_new
         om_old = om_new
